@@ -208,8 +208,6 @@ class AWSCredentials(object):
 
     def _request(self, uri):
         uri_parsed = urlparse.urlparse(uri)
-        if '.' in uri_parsed.netloc:
-            raise Exception("uri should not include fully qualified domain name for bucket")
 
         # quote path for +, ~, and spaces
         # see bugs.launchpad.net #1003633 and #1086997
